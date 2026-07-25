@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abdullah Shafique — AI Systems Engineer</title>
-  <meta name="description" content="AI Systems Engineer. Build Agents · Deploy RAG · Ship APIs. GPA 3.99 · 2 live demos.">
+  <meta name="description" content="AI Systems Engineer. Build Agents · Deploy RAG · Ship APIs. GPA 3.99 · 2 live demos. 91% recall@5.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://abdullahshafique.me/">
   <meta name="theme-color" content="#E2FD52">
@@ -19,13 +19,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://abdullahshafique.me/assets/og.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
-<noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
-</noscript>
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   [
@@ -61,19 +55,60 @@
 
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="css/style.css">
+<base target="_blank">
 </head>
 <body>
 
-  <!-- Skip link -->
-  <a class="sr-only" href="#main">Skip to content</a>
+  <!-- Particle trail canvas (pointer devices only) -->
+  <canvas id="trailCanvas" aria-hidden="true"></canvas>
+
+  <!-- Custom cursor -->
+  <div class="cur-dot" id="curDot" aria-hidden="true"></div>
+  <div class="cur-ring" id="curRing" aria-hidden="true"></div>
 
   <!-- Scroll progress bar -->
   <div class="pbar" id="pbar" aria-hidden="true"></div>
 
-  <!-- Navigation -->
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <!-- Easter egg message -->
+  <div class="easter-msg" id="easterMsg" role="status" aria-live="polite">
+    🧠 You found the gradient field!<br>
+    <span style="font-size:.72rem;color:var(--neutral-500)">Three.js r128 · WebGL shaders · Organic orbs</span><br>
+    <span style="font-size:.65rem;color:var(--neutral-300)">abdullahhshafique@outlook.com</span>
+  </div>
+
+  <!-- Terminal widget -->
+  <div class="terminal-widget" id="terminalWidget" title="Click to expand" aria-label="Recent commit activity">
+    <div class="term-hd">
+      <div class="cdot" aria-hidden="true"></div>
+      <span>now building</span>
+    </div>
+    <div>
+      <span class="term-prompt" aria-hidden="true">> </span>
+      <span class="term-out" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Mobile menu -->
+  <div id="mobMenu" class="mob-nav" aria-hidden="true" role="navigation" aria-label="Mobile navigation">
+    <a href="#systems" onclick="closeMob()">Systems</a>
+    <a href="#projects" onclick="closeMob()">Projects</a>
+    <a href="#about" onclick="closeMob()">About</a>
+    <a href="#proof" onclick="closeMob()">Proof</a>
+    <a href="#contact" onclick="closeMob()">Contact</a>
+    <a href="https://github.com/abdullahhshafique" target="_blank" rel="noopener noreferrer" onclick="closeMob()">GitHub ↗</a>
+    <a href="https://raw.githubusercontent.com/abdullahhshafique/abdullahhshafique/main/resume.pdf"
+       target="_blank" rel="noopener noreferrer" class="mob-cv" onclick="closeMob()">↓ Download CV</a>
+    <span class="mob-sub">UTC+5 · Remote · Available now</span>
+  </div>
+
   <header>
     <nav id="nav" role="navigation" aria-label="Main navigation">
-      <a href="#" class="nav-brand" aria-label="Home — Abdullah Shafique">
+      <a href="#" class="nav-brand" aria-label="Home – Abdullah Shafique">
         <span class="nav-brand-name">ABDULLAH SHAFIQUE</span>
         <span class="nav-brand-sub">AI Systems Engineer</span>
       </a>
@@ -92,69 +127,426 @@
     </nav>
   </header>
 
-  <!-- Mobile menu -->
-  <div id="mobMenu" class="mob-nav" aria-hidden="true" role="navigation" aria-label="Mobile navigation">
-    <a href="#systems" onclick="closeMob()">Systems</a>
-    <a href="#projects" onclick="closeMob()">Projects</a>
-    <a href="#about" onclick="closeMob()">About</a>
-    <a href="#proof" onclick="closeMob()">Proof</a>
-    <a href="#contact" onclick="closeMob()">Contact</a>
-    <a href="https://github.com/abdullahhshafique" target="_blank" rel="noopener noreferrer" onclick="closeMob()">GitHub ↗</a>
-    <a href="https://raw.githubusercontent.com/abdullahhshafique/abdullahhshafique/main/resume.pdf"
-       target="_blank" rel="noopener noreferrer" class="mob-cv" onclick="closeMob()">↓ Download CV</a>
-    <span class="mob-sub">UTC+5 · Remote · Available now</span>
-  </div>
-
   <main id="main">
+
     <!-- HERO -->
     <section id="hero" aria-label="Introduction">
-      <!-- Hero content will be built in Phase 1 -->
+      <canvas id="heroCanvas" aria-hidden="true" title="Click for a surprise"></canvas>
+      <div class="hero-fog" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="h-badge">
+          <div class="pulse-ring" aria-hidden="true"></div>
+          Seeking AI/ML Engineering roles — contract &amp; full-time, Q2 2025 onwards
+        </div>
+
+        <h1 class="h-heading">
+          <span class="h-kicker">// AI Systems Engineer · Pakistan · UTC+5</span>
+          <div class="h-display" aria-label="Build Agents, Deploy RAG, Ship APIs">
+            <span class="hd-ghost" aria-hidden="true">BUILD</span>
+            <span class="hd-solid" id="twTarget"></span>
+            <span class="hd-accent">DEPLOY PROD.</span>
+          </div>
+        </h1>
+
+        <p class="h-tagline">
+          Backend AI systems that are <strong>measurable, production-aware, and deployed</strong>.
+          Every project ships with <em>evaluation metrics, failure handling,</em> and real performance data
+          — no demos without numbers.
+        </p>
+
+        <div class="h-pills" aria-label="Tech stack">
+          <span class="pill">Python</span>
+          <span class="pill">LangChain</span>
+          <span class="pill">LangGraph</span>
+          <span class="pill">FastAPI</span>
+          <span class="pill">Groq</span>
+          <span class="pill">FAISS</span>
+          <span class="pill">Docker</span>
+          <span class="pill">Streamlit</span>
+        </div>
+
+        <div class="h-ctas">
+          <a href="#projects" class="btn-p">See the projects →</a>
+          <a href="#contact" class="btn-s">Let's talk</a>
+          <a href="https://raw.githubusercontent.com/abdullahhshafique/abdullahhshafique/main/resume.pdf"
+             target="_blank" rel="noopener noreferrer" class="btn-cv">↓ CV</a>
+        </div>
+      </div>
+
+      <!-- Desktop metrics (right side) -->
+      <div class="h-metrics" aria-hidden="true">
+        <div class="m-card"><div class="m-val">91<span style="font-size:1.1rem">%</span></div><div class="m-lbl">Retrieval Recall@5</div></div>
+        <div class="m-card"><div class="m-val">210<span style="font-size:1.1rem">ms</span></div><div class="m-lbl">P95 API Latency</div></div>
+        <div class="m-card"><div class="m-val">2</div><div class="m-lbl">Live Demos</div></div>
+      </div>
+
+      <!-- Mobile metrics (bottom row) -->
+      <div class="h-metrics-mobile" aria-hidden="true">
+        <div class="m-card"><div class="m-val">91<span style="font-size:.85rem">%</span></div><div class="m-lbl">Recall@5</div></div>
+        <div class="m-card"><div class="m-val">210<span style="font-size:.85rem">ms</span></div><div class="m-lbl">Latency</div></div>
+        <div class="m-card"><div class="m-val">3.99</div><div class="m-lbl">GPA</div></div>
+        <div class="m-card"><div class="m-val">2</div><div class="m-lbl">Live Demos</div></div>
+      </div>
+
+      <div class="h-scroll" aria-hidden="true">
+        <div class="h-scroll-line"></div>
+        <span class="h-scroll-txt">Scroll to explore</span>
+      </div>
+      <div class="h-commit" aria-hidden="true">
+        <div class="cdot"></div>5 systems · 2 live demos · production-aware
+      </div>
     </section>
 
     <!-- SYSTEMS -->
     <section id="systems">
-      <!-- Systems content will be built in Phase 1 -->
+      <div class="s-label rev">Architecture</div>
+      <div class="s-title rev">HOW MY <span class="ac">SYSTEMS</span><br><span class="gh">WORK.</span></div>
+      <div class="sys-grid">
+
+        <div class="sys-card ag rev d1">
+          <div class="sc-bar"></div>
+          <div class="sc-head"><div><div class="sc-name">AI Research Agent</div><div class="sc-sub">LangChain · Groq Llama 3.3 70B · Streamlit</div></div><div class="sc-icon">🤖</div></div>
+          <div class="flow ag">
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">User Query</div><div class="fdesc">Natural language research topic</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">Search Agent</div><div class="fchips"><span class="fchip">Tavily API</span><span class="fchip">5 live sources</span><span class="fchip">Real-time</span></div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">LLM Synthesis</div><div class="fdesc">Groq Llama 3.3 70B distils all content</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">Report Agent</div><div class="fdesc">Structures findings into sections + refs</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div></div><div class="fbody"><div class="flabel">PDF Export</div><div class="fdesc">Downloadable branded report in &lt;60s</div></div></div>
+          </div>
+          <div class="sc-metrics"><span class="sc-m k">Live Streamlit app</span><span class="sc-m k">Llama 3.3 70B</span><span class="sc-m">Tavily real-time</span><span class="sc-m">fpdf2 export</span></div>
+        </div>
+
+        <div class="sys-card rg rev d2">
+          <div class="sc-bar"></div>
+          <div class="sc-head"><div><div class="sc-name">PDF Knowledge Assistant</div><div class="sc-sub">FastAPI · React 18 · FAISS · Groq</div></div><div class="sc-icon">📄</div></div>
+          <div class="flow rg">
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">Upload PDF</div><div class="fdesc">pdfplumber extracts text page by page</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">Chunk + Embed</div><div class="fchips"><span class="fchip">800 chars</span><span class="fchip">150 overlap</span><span class="fchip">384-dim</span></div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">FAISS Index</div><div class="fdesc">Local cosine similarity · no cloud needed</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">Groq LLM</div><div class="fdesc">Llama 3.1 8B · answer in &lt;3s</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div></div><div class="fbody"><div class="flabel">Answer + Citations</div><div class="fdesc">Page-level sources · relevance scores</div></div></div>
+          </div>
+          <div class="sc-metrics"><span class="sc-m k">Recall@5: 0.91</span><span class="sc-m k">&lt;3s answers</span><span class="sc-m">React + FastAPI</span><span class="sc-m">Vercel + HF Spaces</span></div>
+        </div>
+
+        <div class="sys-card ml rev d3">
+          <div class="sc-bar"></div>
+          <div class="sc-head"><div><div class="sc-name">House Price Prediction API</div><div class="sc-sub">FastAPI · XGBoost · Docker</div></div><div class="sc-icon">🏠</div></div>
+          <div class="flow ml">
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">Raw CSV Data</div><div class="fdesc">California housing dataset</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">ML Pipeline</div><div class="fchips"><span class="fchip">XGBoost</span><span class="fchip">RandomForest</span><span class="fchip">Linear</span></div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">Model Selection</div><div class="fdesc">Best RMSE via cross-validation</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">FastAPI Endpoint</div><div class="fdesc">Pydantic schemas · strict validation</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div></div><div class="fbody"><div class="flabel">JSON Response</div><div class="fdesc">Prediction + confidence interval</div></div></div>
+          </div>
+          <div class="sc-metrics"><span class="sc-m k">RMSE: 0.48</span><span class="sc-m k">210ms p95</span><span class="sc-m">120 req/s</span><span class="sc-m">Docker + Gunicorn</span></div>
+        </div>
+
+        <div class="sys-card ev rev d4">
+          <div class="sc-bar"></div>
+          <div class="sc-head"><div><div class="sc-name">LLM Eval Framework</div><div class="sc-sub">ROUGE · BERTScore · GitHub Actions CI</div></div><div class="sc-icon">🧪</div></div>
+          <div class="flow ev">
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">Test Suite</div><div class="fdesc">50 hand-crafted prompts + expected answers</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">LLM Under Test</div><div class="fdesc">Any OpenAI-compatible model endpoint</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">Metric Computation</div><div class="fchips"><span class="fchip">ROUGE-L</span><span class="fchip">BERTScore</span><span class="fchip">Faithfulness</span></div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div><div class="fline"></div></div><div class="fbody"><div class="flabel">Report + CI Alert</div><div class="fdesc">GitHub comment if score drops</div></div></div>
+            <div class="fn"><div class="fspine"><div class="fdot"></div></div><div class="fbody"><div class="flabel">Regression Guard</div><div class="fdesc">Caught 2 regressions before deployment</div></div></div>
+          </div>
+          <div class="sc-metrics"><span class="sc-m k">50 prompts</span><span class="sc-m k">4.2s avg test</span><span class="sc-m">2 regressions caught</span><span class="sc-m">GitHub Actions</span></div>
+        </div>
+
+      </div>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects">
-      <!-- Projects content will be built in Phase 1 -->
+      <div class="s-label rev">Work</div>
+      <div class="s-title rev">THINGS I'VE <span class="ac">BUILT</span><br><span class="gh">(WITH NUMBERS).</span></div>
+      <div class="proj-grid">
+
+        <!-- 01 Featured -->
+        <div class="pcard feat rev">
+          <div class="pcglow" aria-hidden="true"></div>
+          <div>
+            <div class="pm">
+              <span class="pn">01 — AGENT</span>
+              <div class="pls">
+                <a href="https://aadi-research-agent.streamlit.app" target="_blank" rel="noopener noreferrer" class="pl demo">🚀 Live Demo ↗</a>
+                <a href="https://github.com/abdullahhshafique/research-agent-langgraph" target="_blank" rel="noopener noreferrer" class="pl">GitHub ↗</a>
+              </div>
+            </div>
+            <div class="ptitle">AI Research Agent</div>
+            <div class="pmet">Real-time search · Llama 3.3 70B · PDF export in &lt;60s</div>
+            <div class="pdesc">Autonomous agent that searches 5 live sources via Tavily, synthesises findings with Groq Llama 3.3 70B, and generates a structured downloadable PDF report. No copy-pasting. No tab-switching.</div>
+            <div class="pnote"><strong>Stack:</strong> LangChain · Groq · Tavily API · Streamlit · fpdf2</div>
+            <div class="pnote"><strong>Flow:</strong> Search Agent → Summarizer chain → Report Agent → PDF Exporter</div>
+            <div class="ptags">
+              <span class="ptag g">LangChain</span><span class="ptag c">Groq Llama 3.3</span>
+              <span class="ptag g">Tavily</span><span class="ptag c">Streamlit</span><span class="ptag">fpdf2</span>
+            </div>
+          </div>
+          <div class="cpanel">
+            <div class="cph"><div class="cpd" style="background:#ff5f56"></div><div class="cpd" style="background:#ffbd2e"></div><div class="cpd" style="background:#27c93f"></div><span class="cpf">report_agent.py</span></div>
+            <div class="cpl"><span class="cln">1</span><span><span class="kw">from</span> langchain.agents <span class="kw">import</span> <span class="vr">AgentExecutor</span></span></div>
+            <div class="cpl"><span class="cln">2</span><span><span class="kw">from</span> langchain_groq <span class="kw">import</span> <span class="vr">ChatGroq</span></span></div>
+            <div class="cpl"><span class="cln">3</span><span><span class="kw">from</span> utils.pdf_exporter <span class="kw">import</span> <span class="vr">export_pdf</span></span></div>
+            <div class="cpl"><span class="cln">4</span><span>&nbsp;</span></div>
+            <div class="cpl"><span class="cln">5</span><span><span class="cmt"># Groq -- fastest inference available</span></span></div>
+            <div class="cpl"><span class="cln">6</span><span><span class="vr">llm</span> = <span class="fn2">ChatGroq</span>(model=<span class="sv">"llama-3.3-70b-versatile"</span>)</span></div>
+            <div class="cpl"><span class="cln">7</span><span>&nbsp;</span></div>
+            <div class="cpl"><span class="cln">8</span><span><span class="cmt"># 5 live sources -> synthesise -> PDF</span></span></div>
+            <div class="cpl"><span class="cln">9</span><span><span class="vr">result</span> = <span class="fn2">run_pipeline</span>(query, llm, pdf=<span class="kw">True</span>)</span></div>
+            <div class="cpl"><span class="cln">10</span><span><span class="cmt"># -> report.pdf  under 60s</span></span></div>
+          </div>
+        </div>
+
+        <!-- 02 PDF Assistant -->
+        <div class="pcard rev d1">
+          <div class="pcglow" aria-hidden="true"></div>
+          <div class="pm"><span class="pn">02 — RAG</span><div class="pls"><a href="https://pdf-knowledge-assistant.vercel.app" target="_blank" rel="noopener noreferrer" class="pl demo">🚀 Live Demo ↗</a><a href="https://github.com/abdullahhshafique/pdf-knowledge-assistant" target="_blank" rel="noopener noreferrer" class="pl">GitHub ↗</a></div></div>
+          <div class="ptitle">PDF Knowledge Assistant</div>
+          <div class="pmet">recall@5: 0.91 · grounded: 87% · &lt;3s answers</div>
+          <div class="pdesc">Upload any PDF and chat with it in plain English. Page-level citations, multi-document support, multi-turn memory. FAISS runs locally — no cloud database.</div>
+          <div class="pnote">Deployed: React on Vercel + FastAPI on Hugging Face Spaces (Docker)</div>
+          <div class="ptags"><span class="ptag g">RAG</span><span class="ptag c">React + FastAPI</span><span class="ptag g">FAISS</span><span class="ptag c">Groq</span><span class="ptag">HF Spaces</span></div>
+        </div>
+
+        <!-- 03 House Price API -->
+        <a href="https://github.com/abdullahhshafique/house-price-prediction-api" target="_blank" rel="noopener noreferrer" class="pcard rev d2">
+          <div class="pcglow" aria-hidden="true"></div>
+          <div class="pm"><span class="pn">03 — ML API</span><div class="pls"><span class="pl">GitHub ↗</span></div></div>
+          <div class="ptitle">House Price Prediction API</div>
+          <div class="pmet">RMSE: 0.48 · p95: 210ms · 120 req/s</div>
+          <div class="pdesc">End-to-end ML pipeline + FastAPI serving. Input validation, error handling, Dockerized for production.</div>
+          <div class="pnote">XGBoost best RMSE · Pydantic schemas · Uvicorn+Gunicorn</div>
+          <div class="ptags"><span class="ptag g">FastAPI</span><span class="ptag c">XGBoost</span><span class="ptag g">ML Pipeline</span><span class="ptag">Docker</span></div>
+        </a>
+
+        <!-- 04 LLM Eval -->
+        <a href="https://github.com/abdullahhshafique/llm-eval-framework" target="_blank" rel="noopener noreferrer" class="pcard rev d3">
+          <div class="pcglow" aria-hidden="true"></div>
+          <div class="pm"><span class="pn">04 — EVALUATION</span><div class="pls"><span class="pl">GitHub ↗</span></div></div>
+          <div class="ptitle">LLM Evaluation Framework</div>
+          <div class="pmet">50 prompts · 2 regressions caught · 4.2s avg</div>
+          <div class="pdesc">Automated testing + metrics for LLM outputs. ROUGE-L, BERTScore, faithfulness checker with GitHub Actions CI.</div>
+          <div class="pnote">Caught 2 regressions before deployment · hybrid metrics (fast + accurate)</div>
+          <div class="ptags"><span class="ptag g">Evaluation</span><span class="ptag c">LLM</span><span class="ptag g">CI/CD</span><span class="ptag">BERTScore</span></div>
+        </a>
+
+        <!-- 05 Agent Monitor -->
+        <a href="https://github.com/abdullahhshafique/agent-monitor" target="_blank" rel="noopener noreferrer" class="pcard rev d4">
+          <div class="pcglow" aria-hidden="true"></div>
+          <div class="pm"><span class="pn">05 — MONITORING</span><div class="pls"><span class="pl">GitHub ↗</span></div></div>
+          <div class="ptitle">Agent Monitoring Dashboard</div>
+          <div class="pmet">5 agents tracked · 30s alert time · cost logged</div>
+          <div class="pdesc">Lightweight dashboard for agent runs, token usage, failures, and cost per run. FastAPI + HTMX stack.</div>
+          <div class="pnote">SQLite · Grafana optional · Slack alert on crash</div>
+          <div class="ptags"><span class="ptag g">Monitoring</span><span class="ptag c">Observability</span><span class="ptag g">FastAPI</span><span class="ptag">HTMX</span></div>
+        </a>
+
+      </div>
     </section>
 
     <!-- STATS -->
     <section id="stats">
-      <!-- Stats content will be built in Phase 1 -->
+      <div class="stats-grid rev">
+        <div class="sc2"><div class="snum" data-target="5">0</div><div class="slbl">Distinct AI Systems</div><div class="ssub">agent · rag · ml · eval · monitor</div></div>
+        <div class="sc2"><div class="snum" data-target="91">0<span class="sunit">%</span></div><div class="slbl">Avg Retrieval Recall@5</div><div class="ssub">over 220 test queries</div></div>
+        <div class="sc2"><div class="snum" data-target="399">0</div><div class="slbl">CGPA (x100)</div><div class="ssub">Riphah International University</div></div>
+        <div class="sc2"><div class="snum" data-target="6">0<span class="sunit">yr</span></div><div class="slbl">Design Background</div><div class="ssub">graphic designer to AI engineer</div></div>
+      </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about">
-      <!-- About content will be built in Phase 1 -->
+      <div class="s-label rev">About</div>
+      <div class="s-title rev">ENGINEER.<br><span class="ac">BUILDER.</span><br><span class="gh">MEASURABLE THINKER.</span></div>
+      <div class="about-grid rev">
+        <div class="at">
+          <div class="avatar-wrap">
+            <div class="avatar"></div>
+            <div class="avatar-info">
+              <h3>Abdullah Shafique</h3>
+              <p>AI Systems Engineer · Pakistan · UTC+5</p>
+            </div>
+          </div>
+          <p>I'm an AI Engineer with a background not many share — I spent <strong>6 years as a professional graphic designer</strong> before transitioning into software engineering. That shapes everything: I build systems that are both <em>technically sound and genuinely usable</em>.</p>
+          <p>Currently studying Software Engineering at <strong>Riphah International University</strong> (GPA 3.99 / 4.0, 2024–2028) while building production AI systems in parallel.</p>
+          <p>Every project includes <strong>evaluation metrics, failure handling, and real performance data</strong>. No demos without numbers. Open to <em>AI engineering internships and junior roles</em>.</p>
+
+          <div class="certs">
+            <span class="cert">🏅 AI Agent Developer — Vanderbilt University</span>
+            <span class="cert">🏅 Python Development — Microsoft</span>
+            <span class="cert">🏅 Adobe Graphic Designer</span>
+            <span class="cert">🎓 SE @ Riphah · GPA 3.99</span>
+          </div>
+
+          <div class="tl">
+            <div class="tl-hd">// Timeline</div>
+            <div class="tli">
+              <div class="tldot"></div>
+              <div><div class="tly">2024 — present</div><div class="tlr">AI Systems Engineer (self-directed)</div><div class="tld">5 systems shipped, 2 with live demos. Measurable outcomes on every project.</div></div>
+            </div>
+            <div class="tli">
+              <div class="tldot alt"></div>
+              <div><div class="tly alt">2024 — present</div><div class="tlr">BSc Software Engineering — Riphah University</div><div class="tld">GPA 3.99 / 4.0 · Building production systems alongside coursework.</div></div>
+            </div>
+            <div class="tli">
+              <div class="tldot"></div>
+              <div><div class="tly">2018 — 2024</div><div class="tlr">Professional Graphic Designer</div><div class="tld">6 years, Adobe-certified. Applies design thinking to AI products and interfaces.</div></div>
+            </div>
+          </div>
+
+          <div class="gh-strip">
+            <div class="ghi"><div class="ghicon">🟩</div><div><div class="ghlbl">Active builder</div><div class="ghsub">Daily commits · 5 active repos</div></div></div>
+            <a href="https://github.com/abdullahhshafique" target="_blank" rel="noopener noreferrer" class="ghlink">View GitHub ↗</a>
+          </div>
+
+          <!-- Contribution heatmap -->
+          <div class="contrib-wrap rev">
+            <div class="contrib-hd">
+              <h4>Contribution Activity</h4>
+              <span>Last 90 days · GitHub</span>
+            </div>
+            <canvas id="contribCanvas" aria-label="GitHub contribution heatmap for the last 90 days"></canvas>
+          </div>
+        </div>
+
+        <div class="skills-wrap">
+          <div class="sg">
+            <h4>AI / ML Stack</h4>
+            <div class="stags">
+              <span class="stag">Python</span><span class="stag">LangChain</span><span class="stag">LangGraph</span>
+              <span class="stag">Groq</span><span class="stag">OpenAI API</span><span class="stag">Anthropic API</span>
+              <span class="stag">FAISS</span><span class="stag">ChromaDB</span>
+              <span class="stag">Scikit-learn</span><span class="stag">XGBoost</span>
+            </div>
+          </div>
+          <div class="sg">
+            <h4>Backend / DevOps</h4>
+            <div class="stags">
+              <span class="stag">FastAPI</span><span class="stag">Streamlit</span><span class="stag">Docker</span>
+              <span class="stag">GitHub Actions</span><span class="stag">HF Spaces</span><span class="stag">Vercel</span>
+            </div>
+          </div>
+          <div class="sg">
+            <h4>Engineering Practices</h4>
+            <div class="stags">
+              <span class="stag">Evaluation-driven dev</span><span class="stag">Failure handling</span>
+              <span class="stag">Latency optimisation</span><span class="stag">CI/CD for AI</span>
+              <span class="stag">Pydantic validation</span>
+            </div>
+          </div>
+          <div class="sg">
+            <h4>Design (6yr background)</h4>
+            <div class="stags">
+              <span class="stag">Adobe Suite</span><span class="stag">UI/UX Thinking</span>
+              <span class="stag">Visual Systems</span><span class="stag">Brand Design</span>
+            </div>
+          </div>
+          <!-- Language chart -->
+          <div class="lang-wrap rev">
+            <h4>Most Used Languages</h4>
+            <div id="langChart" aria-label="Programming languages by bytes across all repos"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SOCIAL PROOF -->
     <section id="proof">
-      <!-- Proof content will be built in Phase 1 -->
+      <div class="s-label rev">Proof</div>
+      <div class="s-title rev">TRUST <span class="ac">SIGNALS</span><br><span class="gh">& VALIDATION.</span></div>
+      <div class="proof-note rev">
+        <strong>⚡ Action item:</strong> Request LinkedIn recommendations from 2-3 peers this week. Even one real sentence from a named person transforms this section from self-reported to socially validated. Replace these placeholder cards once collected.
+      </div>
+      <div class="proof-grid rev">
+        <div class="proof-card">
+          <div class="stars">★★★★★</div>
+          <p class="pq">91% recall on the first proper evaluation run. The metrics-first approach made debugging trivial — we always knew exactly what changed.</p>
+          <div class="pa"><div class="pa-av">A</div><div><div class="pa-name">[ Replace with real name ]</div><div class="pa-role">Colleague · LinkedIn</div></div></div>
+        </div>
+        <div class="proof-card">
+          <div class="stars">★★★★★</div>
+          <p class="pq">The design background shows — every system Abdullah ships is both technically correct and genuinely pleasant to use. That combination is rare.</p>
+          <div class="pa"><div class="pa-av">B</div><div><div class="pa-name">[ Replace with real name ]</div><div class="pa-role">Peer Engineer · LinkedIn</div></div></div>
+        </div>
+        <div class="proof-card">
+          <div class="stars">★★★★★</div>
+          <p class="pq">The LLM eval framework caught two regressions before they shipped. That defensive engineering separates reliable teams from flaky ones.</p>
+          <div class="pa"><div class="pa-av">C</div><div><div class="pa-name">[ Replace with real name ]</div><div class="pa-role">Engineering Lead · LinkedIn</div></div></div>
+        </div>
+      </div>
+      <div class="gh-metrics rev">
+        <div class="ghm">🟩 <strong>Daily commits</strong> · 5 active repos</div>
+        <div class="ghm">⭐ <strong id="ghStars"><span class="skel"></span></strong></div>
+        <div class="ghm">🍴 <strong id="ghForks"><span class="skel"></span></strong></div>
+        <div class="ghm">🚀 <strong>2 live demos</strong> deployed &amp; public</div>
+      </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
-      <!-- Contact content will be built in Phase 1 -->
+      <div class="cont-inner rev">
+        <div class="s-label">Contact</div>
+        <div class="s-title" style="margin-bottom:1.5rem">
+          LET'S BUILD<br><span class="ac">MEASURABLE</span><br><span class="gh">AI SYSTEMS.</span>
+        </div>
+        <p class="crole">
+          Seeking <span>remote AI/ML Engineering roles</span> — contract &amp; full-time, Q2 2025 onwards.<br>
+          UTC+5 · overlaps EU mornings &amp; US East afternoons · fluent English.
+        </p>
+        <div class="avail-row">
+          <div class="abadge"><div class="pulse-ring" aria-hidden="true"></div>Available now</div>
+          <div class="tzbadge">🕐 UTC+5 · EU/US overlap</div>
+        </div>
+        <div class="email-blk">
+          <a href="mailto:abdullahhshafique@outlook.com" class="email-a">abdullahhshafique@outlook.com</a>
+          <button class="copybtn" onclick="copyEmail()" aria-label="Copy email address">copy</button>
+          <div class="copytip" id="copyTip" role="status" aria-live="polite">✓ Copied!</div>
+        </div>
+        <div class="cta-row">
+          <a href="https://cal.com/abdullahhshafique" target="_blank" rel="noopener noreferrer" class="btn-cal">📅 Book a 30-min call</a>
+          <a href="https://raw.githubusercontent.com/abdullahhshafique/abdullahhshafique/main/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-dl">⬇ Download CV</a>
+        </div>
+        <div class="soc-row">
+          <a href="https://github.com/abdullahhshafique" target="_blank" rel="noopener noreferrer" class="soc">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/abdullahhshafique/" target="_blank" rel="noopener noreferrer" class="soc li">LinkedIn ↗</a>
+          <a href="mailto:abdullahhshafique@outlook.com" class="soc">Email ↗</a>
+          <a href="https://wa.me/923099508436" target="_blank" rel="noopener noreferrer" class="soc">WhatsApp ↗</a>
+        </div>
+      </div>
     </section>
+
   </main>
 
   <footer>
-    <!-- Footer content will be built in Phase 1 -->
+    <p>© <span id="yr"></span> <span>Abdullah Shafique</span> — AI Systems Engineer · Pakistan</p>
+    <p>Built with Three.js WebGL shaders, Lenis &amp; Bebas Neue ·
+       <a href="https://github.com/abdullahhshafique/abdullahhshafique" target="_blank" rel="noopener noreferrer">view source ↗</a></p>
   </footer>
 
-  <!-- Scripts (Phase 2) -->
+  <!--
+    Script load order (synchronous):
+    1. three.min.js  — window.THREE must exist before scene.js
+    2. lenis.min.js  — window.Lenis used by main.js
+    3. cursor.js     — standalone IIFE
+    4. scene.js      — needs window.THREE
+    5. tilt.js       — standalone IIFE
+    6. github.js     — standalone, defers 600ms
+    7. terminal.js   — standalone, defers 2800ms
+    8. main.js       — bootstrap, uses window.Lenis
+  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <!-- <script src="js/cursor.js"></script> -->
-  <!-- <script src="js/scene.js"></script> -->
-  <!-- <script src="js/tilt.js"></script> -->
-  <!-- <script src="js/github.js"></script> -->
-  <!-- <script src="js/terminal.js"></script> -->
-  <!-- <script src="js/main.js"></script> -->
+  <script src="js/cursor.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/github.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
