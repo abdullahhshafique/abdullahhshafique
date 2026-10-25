@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="keywords" content="AI Agent Engineer, LangChain, RAG, LLM Evaluation, FastAPI, Python, MCP">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Abdullah Shafique — Agentic AI Engineer</title>
+  <meta name="description" content="Agentic AI Engineer. Build Agents · Deploy RAG · Ship APIs. GPA 3.99 · 2 live demos · MCP integration.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://abdullahhshafique.me">
+  <meta name="theme-color" content="#c26a97">
+
+  <meta property="og:title"        content="Abdullah Shafique — Agentic AI Engineer">
+  <meta property="og:description"  content="Build Agents • Deploy RAG • Ship APIs. 5 systems. 2 live demos. 91% recall@5. MCP integration.">
+  <meta property="og:url"          content="https://abdullahhshafique.me">
+  <meta property="og:type"         content="website">
+  <meta property="og:image"        content="https://abdullahhshafique.me/assets/og.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:image"       content="https://abdullahhshafique.me/assets/og.jpg">
+
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"Person","name":"Abdullah Shafique","jobTitle":"Agentic AI Engineer","url":"https://abdullahhshafique.me","email":"abdullahhshafique@outlook.com","alumniOf":"Riphah International University","knowsAbout":["LangGraph","LangChain","RAG","FastAPI","Groq","Python","LLM Evaluation","MCP"],"sameAs":["https://github.com/abdullahhshafique","https://www.linkedin.com/in/abdullahhshafique/"]},{"@context":"https://schema.org","@type":"WebSite","name":"Abdullah Shafique","url":"https://abdullahhshafique.me"}]
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+
+  <link rel="icon" href="assets/favicon.jpg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== THREE.JS PARTICLE BG ===== -->
+  <canvas id="particlesBg" aria-hidden="true"></canvas>
+
+  <!-- ===== TOP NAV ===== -->
+  <header>
+    <nav id="nav" role="navigation" aria-label="Main navigation">
+      <a href="#" class="nav-brand" aria-label="Home – Abdullah Shafique">
+        <span class="nav-brand-name">ABDULLAH SHAFIQUE</span>
+        <span class="nav-brand-sub">Agentic AI Engineer</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#systems">Systems</a></li>
+        <li><a href="#architecture">Design</a></li>
+        <li><a href="#patterns">Patterns</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#economics">Economics</a></li>
+        <li><a href="#eval-results">Eval</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#proof">Proof</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#mcp">MCP</a></li>
+        <li><a href="#production">Prod</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://github.com/abdullahhshafique" target="_blank" rel="noopener noreferrer">GitHub &#8599;</a></li>
+        <li><a href="#contact" class="nav-hire">Hire Me &#8599;</a></li>
+      </ul>
+      <button id="hbg" class="hbg" aria-label="Toggle navigation menu" aria-controls="mobMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+<!-- With this -->
+<div id="mobMenu" class="mob-nav" aria-hidden="true" role="navigation" aria-label="Mobile navigation">
+  <button class="mob-close" onclick="closeMob()" aria-label="Close menu">✕</button>
+  <a href="#systems"       onclick="closeMob()">Systems</a>
+  <a href="#architecture"  onclick="closeMob()">Design</a>
+  <a href="#patterns"      onclick="closeMob()">Patterns</a>
+  <a href="#projects"      onclick="closeMob()">Projects</a>
+  <a href="#economics"     onclick="closeMob()">Economics</a>
+  <a href="#eval-results"  onclick="closeMob()">Eval</a>
+  <a href="#about"         onclick="closeMob()">About</a>
+  <a href="#proof"         onclick="closeMob()">Proof</a>
+  <a href="#blog"          onclick="closeMob()">Blog</a>
+  <a href="#mcp"           onclick="closeMob()">MCP</a>
+  <a href="#production"    onclick="closeMob()">Prod</a>
+  <a href="#contact"       onclick="closeMob()">Contact</a>
+  <a href="https://github.com/abdullahhshafique" target="_blank" rel="noopener noreferrer" onclick="closeMob()" style="color: var(--pink);">GitHub ↗</a>
+  <a href="https://github.com/abdullahhshafique/abdullahhshafique/blob/main/resume.pdf"
+     target="_blank" rel="noopener noreferrer" class="mob-cv" onclick="closeMob()">⬇ Download CV</a>
+  <span class="mob-sub">🌐 UTC+5 · Remote · Available now</span>
+</div>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <main id="main">
+
+    <!-- ===== CINEMATIC PINNED HERO ===== -->
+    <section id="cinematic">
+      <div id="pinStage">
+
+        <!-- petal canvas -->
+        <canvas id="petalCanvas"></canvas>
+
+        <!-- parallax layers -->
+        <div id="visualWrap">
+          <div id="bgLayer"></div>
+          <div id="midLayer">
+            <div class="anim-scroll-zoom">
+              <div class="anim-float">
+                <div id="bouquet"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- color grade -->
+        <div id="gradeWash"></div>
+
+        <!-- letterbox -->
+        <div id="lbTop"></div>
+        <div id="lbBot"></div>
+
+        <!-- live demo badge -->
+        <div class="live-demo-badge">
+          <span class="live-dot"></span>
+          <span>2 Live Demos Running</span>
+        </div>
+
+        <!-- corner brackets -->
+        <div class="corner-brackets">
+          <span class="tl"></span>
+          <span class="tr"></span>
+          <span class="bl"></span>
+          <span class="br"></span>
+        </div>
+
+        <!-- copy beats -->
+        <div class="beat-container">
+          <div class="beat" data-beat="0">
+            <p class="beat-label">Version No. 07</p>
+            <h1>Quiet Nodes,<br>Waiting Data</h1>
+          </div>
+          <div class="beat" data-beat="1">
+            <h2>The First Boot</h2>
+            <p class="beat-desc">Algorithms unfold as raw data moves through the neural network.</p>
+          </div>
+          <div class="beat" data-beat="2">
+            <p class="beat-label">The Initialization</p>
+            <h2>Connected Systems</h2>
+          </div>
+          <div class="beat" data-beat="3">
+            <h2>Five Deployed</h2>
+            <p class="beat-desc">Autonomous agents, RAG pipelines, and evaluation frameworks — built to measure everything.</p>
+          </div>
+          <div class="beat" data-beat="4">
+            <p class="beat-label">Data Lift</p>
+            <h2>Carried Forward</h2>
+          </div>
+          <div class="beat" data-beat="5">
+            <h2>Into Production</h2>
+          </div>
+          <div class="beat" data-beat="6">
+            <p class="beat-label">Live & Measurable</p>
+            <h2 class="beat-final">Five AI Systems</h2>
+            <p class="beat-desc">Agents · RAG · Evaluation · Monitoring · MCP. All shipped. All metrics visible.</p>
+          </div>
+        </div>
+
+        <!-- timeline HUD -->
+        <div class="timeline-hud">
+          <div id="timelineTrack">
+            <div id="timelineFill"></div>
+          </div>
+          <span id="timeLabel">0.00s</span>
+        </div>
+
+        <!-- timeline dots -->
+        <div id="dotRow"></div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+<!-- ===== SYSTEMS SECTION ===== -->
+<!-- ============================================================ -->
+<section id="systems">
+  <div class="s-label rev">Architecture</div>
+  <div class="s-title rev">HOW MY <span class="ac">SYSTEMS</span><br><span class="gh">WORK.</span></div>
+  <div class="sys-grid">
+
+    <!-- Research Pipeline -->
+    <div class="sys-card ag rev d1">
+      <div class="sc-bar"></div>
+      <div class="sc-head">
+        <div>
+          <div class="sc-name">Research Report Pipeline</div>
+          <div class="sc-sub">Django · Tavily · Groq Llama 3.3 70B · fpdf2 · Tailwind</div>
+        </div>
+        <div class="sc-icon">&#x1F4C4;</div>
+      </div>
+      <div class="flow ag">
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">User Query</div><div class="fdesc">Research topic submitted via Django web form</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Tavily Search</div><div class="fchips"><span class="fchip">5 live sources</span><span class="fchip">Real-time</span></div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Chunk + Synthesize</div><div class="fdesc">Groq Llama 3.3 70B processes raw sources into structured sections</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">PDF Generation</div><div class="fdesc">fpdf2 renders branded report with citations</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div></div>
+          <div class="fbody"><div class="flabel">Job Queue</div><div class="fdesc">Retry on failure · Cancel anytime · Gemini fallback if Groq down</div></div>
+        </div>
+      </div>
+      <div class="sc-metrics">
+        <span class="sc-m k">Django + Tailwind</span>
+        <span class="sc-m k">Gemini fallback</span>
+        <span class="sc-m">Job retry/cancel</span>
+        <span class="sc-m">&lt;60s per report</span>
+      </div>
+    </div>
+
+    <!-- RAG Pipeline -->
+    <div class="sys-card rg rev d2">
+      <div class="sc-bar"></div>
+      <div class="sc-head">
+        <div>
+          <div class="sc-name">RAG + Retrieval Grounding</div>
+          <div class="sc-sub">FastAPI · React 18 · FAISS · Groq</div>
+        </div>
+        <div class="sc-icon">&#x1F4DA;</div>
+      </div>
+      <div class="flow rg">
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Upload PDF</div><div class="fdesc">pdfplumber extracts text + metadata</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Chunk + Embed</div><div class="fchips"><span class="fchip">800 chars</span><span class="fchip">150 overlap</span><span class="fchip">384-dim</span></div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">FAISS Index</div><div class="fdesc">Local cosine similarity · zero cloud dependency</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Retrieval + Generation</div><div class="fdesc">Top-5 sources feed into Llama 3.1 8B answer</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div></div>
+          <div class="fbody"><div class="flabel">Grounded Answer</div><div class="fdesc">Citations with page numbers + relevance scores</div></div>
+        </div>
+      </div>
+      <div class="sc-metrics">
+        <span class="sc-m k">Recall@5: 0.91</span>
+        <span class="sc-m k">Grounded: 87%</span>
+        <span class="sc-m">&lt;3s per query</span>
+        <span class="sc-m">React + Vercel</span>
+      </div>
+    </div>
+
+    <!-- Regression Guard -->
+    <div class="sys-card ml rev d3">
+      <div class="sc-bar"></div>
+      <div class="sc-head">
+        <div>
+          <div class="sc-name">Regression Guard</div>
+          <div class="sc-sub">LLM Evaluation · ROUGE-L · BERTScore · CI/CD</div>
+        </div>
+        <div class="sc-icon">&#x1F6E1;</div>
+      </div>
+      <div class="flow ml">
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Test Suite</div><div class="fdesc">50 hand-crafted prompts + reference answers</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Run Against Model</div><div class="fchips"><span class="fchip">OpenAI endpoint</span><span class="fchip">Auto-test</span><span class="fchip">Baseline compare</span></div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Compute Metrics</div><div class="fdesc">ROUGE-L + BERTScore + semantic similarity</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">GitHub Integration</div><div class="fdesc">Auto-comment on PR if score drops</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div></div>
+          <div class="fbody"><div class="flabel">Deployment Guard</div><div class="fdesc">Caught 2 regressions before production</div></div>
+        </div>
+      </div>
+      <div class="sc-metrics">
+        <span class="sc-m k">50 test cases</span>
+        <span class="sc-m k">2 regressions caught</span>
+        <span class="sc-m">4.2s avg per run</span>
+        <span class="sc-m">GitHub Actions CI</span>
+      </div>
+    </div>
+
+    <!-- Agent Monitor -->
+    <div class="sys-card ev rev d4">
+      <div class="sc-bar"></div>
+      <div class="sc-head">
+        <div>
+          <div class="sc-name">Pipeline Observability</div>
+          <div class="sc-sub">Real-time Monitoring · FastAPI · SQLite</div>
+        </div>
+        <div class="sc-icon">&#x1F4CA;</div>
+      </div>
+      <div class="flow ev">
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Pipeline Execution</div><div class="fdesc">5 pipelines log every step and token usage</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Track Metrics</div><div class="fchips"><span class="fchip">Tokens/run</span><span class="fchip">Cost/query</span><span class="fchip">Step success %</span></div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Detect Failures</div><div class="fdesc">Timeouts, queue stalls, token limit exceeded</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div><div class="fline"></div></div>
+          <div class="fbody"><div class="flabel">Alert System</div><div class="fdesc">Slack + email notified in &lt;30s on crash</div></div>
+        </div>
+        <div class="fn">
+          <div class="fspine"><div class="fdot"></div></div>
+          <div class="fbody"><div class="flabel">Dashboard</div><div class="fdesc">Real-time health view + cost trends</div></div>
+        </div>
+      </div>
+      <div class="sc-metrics">
+        <span class="sc-m k">5 pipelines tracked</span>
+        <span class="sc-m k">&lt;30s alert time</span>
+        <span class="sc-m">Cost per run logged</span>
+        <span class="sc-m">SQLite + FastAPI</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+    <!-- ============================================================ -->
+    <!-- ===== SYSTEM DESIGN / ARCHITECTURE ===== -->
+    <!-- ============================================================ -->
+    <section id="architecture">
+      <div class="s-label rev">System Design</div>
+      <div class="s-title rev">HOW SYSTEMS <span class="ac">THINK</span><br><span class="gh">&amp; RECOVER.</span></div>
+
+      <!-- SVG arrow markers -->
+      <svg style="position:absolute;width:0;height:0">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="var(--border2)"/>
+          </marker>
+          <marker id="arrowhead-amber" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="var(--amber)"/>
+          </marker>
+        </defs>
+      </svg>
+
+      <div class="arch-grid rev">
+        <!-- Diagram 1: Research Agent -->
+        <div class="arch-card">
+          <h3>Research Agent · Tool Recovery</h3>
+          <div class="arch-diagram">
+            <svg viewBox="0 0 600 280" class="arch-svg">
+              <rect x="20" y="20" width="100" height="50" rx="8" class="arch-node start"/>
+              <text x="70" y="50" text-anchor="middle" class="arch-label">User Query</text>
+              <rect x="160" y="20" width="100" height="50" rx="8" class="arch-node"/>
+              <text x="210" y="50" text-anchor="middle" class="arch-label">Search Agent</text>
+              <polygon points="300,45 330,20 360,45 330,70" class="arch-diamond"/>
+              <text x="330" y="50" text-anchor="middle" class="arch-label-small">Tool Fail?</text>
+              <rect x="400" y="20" width="100" height="50" rx="8" class="arch-node retry"/>
+              <text x="450" y="50" text-anchor="middle" class="arch-label">Retry + Fallback</text>
+              <rect x="540" y="20" width="40" height="50" rx="8" class="arch-node end"/>
+              <text x="560" y="50" text-anchor="middle" class="arch-label">✓</text>
+              <path d="M120,45 L160,45" class="arch-arrow"/>
+              <path d="M260,45 L300,45" class="arch-arrow"/>
+              <path d="M360,45 L400,45" class="arch-arrow"/>
+              <path d="M500,45 L540,45" class="arch-arrow"/>
+              <path d="M330,70 L330,100 L210,100 L210,70" class="arch-arrow-loop" stroke-dasharray="6,4"/>
+              <text x="270" y="115" text-anchor="middle" class="arch-label-small">max 3 retries</text>
+              <circle cx="20" cy="140" r="6" class="arch-legend-retry"/>
+              <text x="35" y="145" class="arch-legend-text">Retry path</text>
+              <circle cx="160" cy="140" r="6" class="arch-legend-success"/>
+              <text x="175" y="145" class="arch-legend-text">Success path</text>
+            </svg>
+          </div>
+          <div class="arch-desc">
+            <p><strong>Recovery Pattern:</strong> On tool failure → exponential backoff → fallback tool → human-in-loop after 3 failures</p>
+            <div class="arch-tags"><span class="arch-tag">Retry</span><span class="arch-tag">Fallback</span><span class="arch-tag">Timeout</span></div>
+          </div>
+        </div>
+
+        <!-- Diagram 2: RAG Pipeline -->
+        <div class="arch-card">
+          <h3>RAG Pipeline · Hybrid Retrieval</h3>
+          <div class="arch-diagram">
+            <svg viewBox="0 0 600 200" class="arch-svg">
+              <rect x="10" y="40" width="80" height="40" rx="6" class="arch-node"/>
+              <text x="50" y="65" text-anchor="middle" class="arch-label-small">PDF</text>
+              <rect x="110" y="40" width="80" height="40" rx="6" class="arch-node"/>
+              <text x="150" y="65" text-anchor="middle" class="arch-label-small">Chunk</text>
+              <rect x="210" y="20" width="80" height="40" rx="6" class="arch-node"/>
+              <text x="250" y="45" text-anchor="middle" class="arch-label-small">BM25</text>
+              <rect x="210" y="80" width="80" height="40" rx="6" class="arch-node"/>
+              <text x="250" y="105" text-anchor="middle" class="arch-label-small">FAISS</text>
+              <rect x="320" y="50" width="80" height="40" rx="6" class="arch-node merge"/>
+              <text x="360" y="75" text-anchor="middle" class="arch-label-small">Hybrid</text>
+              <rect x="430" y="50" width="80" height="40" rx="6" class="arch-node"/>
+              <text x="470" y="75" text-anchor="middle" class="arch-label-small">LLM</text>
+              <path d="M90,60 L110,60" class="arch-arrow"/>
+              <path d="M190,60 L210,40" class="arch-arrow"/>
+              <path d="M190,60 L210,100" class="arch-arrow"/>
+              <path d="M290,40 L320,60" class="arch-arrow"/>
+              <path d="M290,100 L320,60" class="arch-arrow"/>
+              <path d="M400,60 L430,60" class="arch-arrow"/>
+              <text x="270" y="145" text-anchor="middle" class="arch-label-small">→ 0.91 Recall@5</text>
+            </svg>
+          </div>
+          <div class="arch-desc">
+            <p><strong>Hybrid Retrieval:</strong> BM25 lexical + FAISS semantic → re-rank → top-5 grounding</p>
+            <div class="arch-tags"><span class="arch-tag">BM25</span><span class="arch-tag">FAISS</span><span class="arch-tag">Re-rank</span></div>
+          </div>
+        </div>
+
+        <!-- Diagram 3: Evaluation CI/CD -->
+        <div class="arch-card">
+          <h3>Evaluation · CI/CD Gate</h3>
+          <div class="arch-diagram">
+            <svg viewBox="0 0 600 200" class="arch-svg">
+              <rect x="10" y="30" width="90" height="40" rx="6" class="arch-node"/>
+              <text x="55" y="55" text-anchor="middle" class="arch-label-small">PR Created</text>
+              <rect x="120" y="30" width="90" height="40" rx="6" class="arch-node"/>
+              <text x="165" y="55" text-anchor="middle" class="arch-label-small">Run Tests</text>
+              <polygon points="240,20 270,50 240,80 210,50" class="arch-diamond"/>
+              <text x="240" y="55" text-anchor="middle" class="arch-label-small">Score</text>
+              <rect x="300" y="10" width="80" height="40" rx="6" class="arch-node success"/>
+              <text x="340" y="35" text-anchor="middle" class="arch-label-small">Pass ✅</text>
+              <rect x="300" y="70" width="80" height="40" rx="6" class="arch-node fail"/>
+              <text x="340" y="95" text-anchor="middle" class="arch-label-small">Fail ❌</text>
+              <rect x="420" y="10" width="80" height="40" rx="6" class="arch-node end"/>
+              <text x="460" y="35" text-anchor="middle" class="arch-label-small">Merge</text>
+              <rect x="420" y="70" width="80" height="40" rx="6" class="arch-node end"/>
+              <text x="460" y="95" text-anchor="middle" class="arch-label-small">Block</text>
+              <path d="M100,50 L120,50" class="arch-arrow"/>
+              <path d="M210,50 L240,50" class="arch-arrow"/>
+              <path d="M270,40 L300,30" class="arch-arrow"/>
+              <path d="M270,60 L300,90" class="arch-arrow"/>
+              <path d="M380,30 L420,30" class="arch-arrow"/>
+              <path d="M380,90 L420,90" class="arch-arrow"/>
+            </svg>
+          </div>
+          <div class="arch-desc">
+            <p><strong>Regression Guard:</strong> 50 test cases → ROUGE-L + BERTScore → PR comment → block on drop &gt; 5%</p>
+            <div class="arch-tags"><span class="arch-tag">CI/CD</span><span class="arch-tag">ROUGE-L</span><span class="arch-tag">BERTScore</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== AGENTIC PATTERNS ===== -->
+    <!-- ============================================================ -->
+    <section id="patterns">
+      <div class="s-label rev">Patterns</div>
+      <div class="s-title rev">AGENTIC <span class="ac">PATTERNS</span><br><span class="gh">IN CODE.</span></div>
+
+      <div class="patterns-grid rev">
+        <!-- Pattern 1: ReAct Loop -->
+        <div class="pattern-card">
+          <div class="pattern-header">
+            <span class="pattern-icon">🔄</span>
+            <span class="pattern-name">ReAct Loop</span>
+            <span class="pattern-badge">Core</span>
+          </div>
+          <div class="pattern-code">
+            <pre><code><span class="cmt"># Research Agent — Reason + Act</span>
+<span class="kw">def</span> <span class="fn">react_loop</span>(query, max_steps=<span class="num">5</span>):
+    <span class="vr">state</span> = {<span class="sv">"query"</span>: query, <span class="sv">"context"</span>: []}
+    <span class="kw">for</span> step <span class="kw">in</span> <span class="fn">range</span>(max_steps):
+        <span class="cmt"># 1. Reason: What to do next?</span>
+        <span class="vr">thought</span> = <span class="vr">llm</span>.<span class="fn">reason</span>(<span class="vr">state</span>)
+        <span class="kw">if</span> <span class="vr">thought</span>.<span class="fn">is_final</span>():
+            <span class="kw">return</span> <span class="vr">thought</span>.<span class="fn">answer</span>()
+        <span class="cmt"># 2. Act: Execute tool</span>
+        <span class="vr">result</span> = <span class="fn">execute_tool</span>(<span class="vr">thought</span>.<span class="fn">tool</span>(), <span class="vr">thought</span>.<span class="fn">args</span>())
+        <span class="cmt"># 3. Observe: Add to context</span>
+        <span class="vr">state</span>[<span class="sv">"context"</span>].<span class="fn">append</span>({<span class="sv">"thought"</span>: <span class="vr">thought</span>, <span class="sv">"result"</span>: <span class="vr">result</span>})
+    <span class="kw">return</span> <span class="fn">synthesize</span>(<span class="vr">state</span>)</code></pre>
+          </div>
+          <div class="pattern-desc">
+            <p>Multi-step reasoning with tool calling. Each loop: <strong>Think → Act → Observe</strong>.</p>
+            <div class="pattern-metrics"><span>Used in: Research Agent</span><span>Avg steps: 3.2</span></div>
+          </div>
+        </div>
+
+        <!-- Pattern 2: Tool Calling with Retries -->
+        <div class="pattern-card">
+          <div class="pattern-header">
+            <span class="pattern-icon">⚡</span>
+            <span class="pattern-name">Tool Calling + Retries</span>
+            <span class="pattern-badge">Resilience</span>
+          </div>
+          <div class="pattern-code">
+            <pre><code><span class="cmt"># Tool execution with retry + fallback</span>
+<span class="kw">def</span> <span class="fn">call_with_retry</span>(tool, args, max_retries=<span class="num">3</span>):
+    <span class="vr">backoff</span> = [<span class="num">0.5</span>, <span class="num">1.0</span>, <span class="num">2.0</span>]  <span class="cmt"># exponential</span>
+    <span class="kw">for</span> attempt <span class="kw">in</span> <span class="fn">range</span>(max_retries):
+        <span class="kw">try</span>:
+            <span class="kw">return</span> <span class="fn">tool</span>(<span class="vr">args</span>)
+        <span class="kw">except</span> <span class="ex">TimeoutError</span>:
+            <span class="fn">sleep</span>(<span class="vr">backoff</span>[attempt]); <span class="kw">continue</span>
+        <span class="kw">except</span> <span class="ex">APIError</span> <span class="kw">as</span> e:
+            <span class="kw">if</span> attempt == max_retries - <span class="num">1</span>:
+                <span class="kw">return</span> <span class="fn">fallback_tool</span>(<span class="vr">args</span>)
+            <span class="fn">sleep</span>(<span class="vr">backoff</span>[attempt])
+    <span class="kw">return</span> {<span class="sv">"error"</span>: <span class="sv">"All retries failed"</span>, <span class="sv">"fallback"</span>: <span class="kc">True</span>}</code></pre>
+          </div>
+          <div class="pattern-desc">
+            <p>Exponential backoff + fallback tools. <strong>Zero failures</strong> surface to user.</p>
+            <div class="pattern-metrics"><span>Recovery rate: 94%</span><span>Max wait: 3.5s</span></div>
+          </div>
+        </div>
+
+        <!-- Pattern 3: Memory Management -->
+        <div class="pattern-card">
+          <div class="pattern-header">
+            <span class="pattern-icon">🧠</span>
+            <span class="pattern-name">Memory Management</span>
+            <span class="pattern-badge">State</span>
+          </div>
+          <div class="pattern-code">
+            <pre><code><span class="cmt"># Short-term + Long-term memory</span>
+<span class="kw">class</span> <span class="cl">AgentMemory</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="vr">self</span>):
+        <span class="vr">self</span>.<span class="fn">short_term</span> = []      <span class="cmt"># session context</span>
+        <span class="vr">self</span>.<span class="fn">long_term</span> = <span class="fn">PostgresStore</span>()  <span class="cmt"># persistent</span>
+    <span class="kw">def</span> <span class="fn">add</span>(<span class="vr">self</span>, event, importance):
+        <span class="vr">self</span>.<span class="fn">short_term</span>.<span class="fn">append</span>(event)
+        <span class="kw">if</span> <span class="vr">importance</span> > <span class="num">0.7</span>:
+            <span class="vr">self</span>.<span class="fn">long_term</span>.<span class="fn">store</span>(event)
+        <span class="kw">if</span> <span class="fn">len</span>(<span class="vr">self</span>.<span class="fn">short_term</span>) > <span class="num">10</span>:
+            <span class="vr">self</span>.<span class="fn">summarize</span>()</code></pre>
+          </div>
+          <div class="pattern-desc">
+            <p>Episodic + semantic memory. <strong>Multi-turn</strong> conversation with context compression.</p>
+            <div class="pattern-metrics"><span>Context window: 10 turns</span><span>Long-term: PostgreSQL</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+<!-- ===== PROJECTS SECTION ===== -->
+<!-- ============================================================ -->
+<section id="projects">
+  <div class="s-label rev">Work</div>
+  <div class="s-title rev">THINGS I'VE <span class="ac">BUILT</span><br><span class="gh">(WITH NUMBERS).</span></div>
+  <div class="proj-grid">
+
+    <!-- 01 Featured: Research Pipeline -->
+    <div class="pcard feat rev">
+      <div class="pcglow" aria-hidden="true"></div>
+      <div>
+        <div class="pm">
+          <span class="pn">01 — PIPELINE</span>
+          <div class="pls">
+            <a href="https://aadi-research-agent.streamlit.app" target="_blank" rel="noopener noreferrer" class="pl demo">&#x1F680; Live Demo &#8599;</a>
+            <a href="https://github.com/abdullahhshafique/research-agent-langgraph" target="_blank" rel="noopener noreferrer" class="pl">GitHub &#8599;</a>
+          </div>
+        </div>
+        <div class="ptitle">Research Report Pipeline</div>
+        <div class="pmet">Django · Tavily · Groq · fpdf2 · Job queue with retry/cancel</div>
+        <div class="pdesc">
+          A Django web app that turns any research topic into a structured PDF report. 
+          Tavily fetches 5 live sources, Groq Llama 3.3 70B synthesizes findings into sections, 
+          and fpdf2 generates the final document. Built the frontend with Tailwind — no Streamlit, no LangChain. 
+          If Groq fails, Gemini catches it. Jobs run in a queue so users can retry or cancel.
+        </div>
+        <div class="pnote"><strong>Why Django over Streamlit:</strong> I wanted a real web app with user accounts, job history, and cancel buttons — not a demo script.</div>
+        <div class="pnote"><strong>Fallback logic:</strong> Groq timeout → exponential backoff → Gemini swap. No user-facing failures in 200+ runs.</div>
+        <div class="ptags">
+          <span class="ptag g">Django</span>
+          <span class="ptag c">Tailwind</span>
+          <span class="ptag g">Tavily</span>
+          <span class="ptag c">Groq</span>
+          <span class="ptag">Job Queue</span>
+          <span class="ptag">Gemini Fallback</span>
+        </div>
+      </div>
+      <div class="cpanel">
+        <div class="cph">
+          <div class="cpd" style="background:#ff5f56"></div>
+          <div class="cpd" style="background:#ffbd2e"></div>
+          <div class="cpd" style="background:#27c93f"></div>
+          <span class="cpf">views.py</span>
+        </div>
+        <div class="cpl"><span class="cln">1</span><span><span class="kw">def</span> <span class="fn2">generate_report</span>(request):</span></div>
+        <div class="cpl"><span class="cln">2</span><span>    <span class="vr">job</span> = <span class="fn2">JobQueue</span>.<span class="fn2">submit</span>(topic=request.POST[<span class="sv">"topic"</span>])</span></div>
+        <div class="cpl"><span class="cln">3</span><span>    <span class="kw">try</span>:</span></div>
+        <div class="cpl"><span class="cln">4</span><span>        <span class="vr">sources</span> = <span class="fn2">tavily_search</span>(job.topic)  <span class="cmt"># 5 live sources</span></span></div>
+        <div class="cpl"><span class="cln">5</span><span>        <span class="vr">report</span> = <span class="fn2">groq_synthesize</span>(sources)     <span class="cmt"># Llama 3.3 70B</span></span></div>
+        <div class="cpl"><span class="cln">6</span><span>    <span class="kw">except</span> <span class="ex">GroqError</span>:</span></div>
+        <div class="cpl"><span class="cln">7</span><span>        <span class="vr">report</span> = <span class="fn2">gemini_synthesize</span>(sources)   <span class="cmt"># fallback</span></span></div>
+        <div class="cpl"><span class="cln">8</span><span>    <span class="kw">return</span> <span class="fn2">PdfResponse</span>(<span class="fn2">render_pdf</span>(report))</span></div>
+      </div>
+    </div>
+
+    <!-- 02 PDF Assistant -->
+    <div class="pcard rev d1">
+      <div class="pcglow" aria-hidden="true"></div>
+      <div class="pm">
+        <span class="pn">02 — RAG</span>
+        <div class="pls">
+          <a href="https://pdf-knowledge-assistant.vercel.app" target="_blank" rel="noopener noreferrer" class="pl demo">&#x1F680; Live Demo &#8599;</a>
+          <a href="https://github.com/abdullahhshafique/pdf-knowledge-assistant" target="_blank" rel="noopener noreferrer" class="pl">GitHub &#8599;</a>
+        </div>
+      </div>
+      <div class="ptitle">RAG + Retrieval Grounding</div>
+      <div class="pmet">Recall@5: 0.91 · Grounded: 87% · &lt;3s · Multi-turn memory</div>
+      <div class="pdesc">
+        Upload any PDF. Ask questions. Retrieve top-5 chunks via FAISS, ground answers in source material. 
+        Page-level citations. Multi-turn conversation preserves context. Local inference — zero cloud database dependency.
+      </div>
+      <div class="pnote"><strong>Evaluation:</strong> Recall@5 measured over 220 test queries. Grounded answers (citations match content) at 87%.</div>
+      <div class="pnote"><strong>Deployed:</strong> React on Vercel + FastAPI on Hugging Face Spaces (Docker)</div>
+      <div class="ptags">
+        <span class="ptag g">RAG</span>
+        <span class="ptag c">FAISS</span>
+        <span class="ptag g">Multi-turn Memory</span>
+        <span class="ptag c">React + FastAPI</span>
+        <span class="ptag">Groq</span>
+      </div>
+    </div>
+
+    <!-- 03 Regression Guard -->
+    <a href="https://github.com/abdullahhshafique/llm-eval-framework" target="_blank" rel="noopener noreferrer" class="pcard rev d2">
+      <div class="pcglow" aria-hidden="true"></div>
+      <div class="pm">
+        <span class="pn">03 — EVALUATION</span>
+        <div class="pls"><span class="pl">GitHub &#8599;</span></div>
+      </div>
+      <div class="ptitle">Regression Guard — Quality Gatekeeper</div>
+      <div class="pmet">50 test cases · 2 regressions caught · 4.2s avg · CI/CD</div>
+      <div class="pdesc">
+        Automated LLM output testing. Every model change evaluated against baseline before merge. 
+        ROUGE-L + BERTScore hybrid metrics. GitHub Actions posts score report to PR. Prevented 2 bad deployments.
+      </div>
+      <div class="pnote"><strong>Impact:</strong> Caught regressions before production. Defensive engineering that saves teams.</div>
+      <div class="ptags">
+        <span class="ptag g">Evaluation</span>
+        <span class="ptag c">ROUGE-L</span>
+        <span class="ptag g">BERTScore</span>
+        <span class="ptag">GitHub Actions</span>
+      </div>
+    </a>
+
+    <!-- 04 Pipeline Monitor -->
+    <a href="https://github.com/abdullahhshafique/agent-monitor" target="_blank" rel="noopener noreferrer" class="pcard rev d3">
+      <div class="pcglow" aria-hidden="true"></div>
+      <div class="pm">
+        <span class="pn">04 — MONITORING</span>
+        <div class="pls"><span class="pl">GitHub &#8599;</span></div>
+      </div>
+      <div class="ptitle">Pipeline Observability — Real-time Health</div>
+      <div class="pmet">5 pipelines tracked · Token usage logged · &lt;30s alerts · Cost per run</div>
+      <div class="pdesc">
+        Real-time dashboard for pipeline runs, token consumption, step success rates, failures, and cost. 
+        Detects timeouts, queue stalls, token limit exceeded. Slack/email alerts on crash.
+      </div>
+      <div class="pnote"><strong>Tech:</strong> FastAPI + SQLite + Slack webhooks. Shows production observability thinking.</div>
+      <div class="ptags">
+        <span class="ptag g">Monitoring</span>
+        <span class="ptag c">Observability</span>
+        <span class="ptag g">FastAPI</span>
+        <span class="ptag">Cost Tracking</span>
+      </div>
+    </a>
+
+    <!-- 05 Other Work - House Price API -->
+    <div class="pcard rev d4" style="opacity: 0.85;">
+      <div class="pcglow" aria-hidden="true"></div>
+      <div class="pm">
+        <span class="pn">+ OTHER</span>
+        <div class="pls">
+          <a href="https://github.com/abdullahhshafique/house-price-prediction-api" target="_blank" rel="noopener noreferrer" class="pl">GitHub &#8599;</a>
+        </div>
+      </div>
+      <div class="ptitle">House Price Prediction API</div>
+      <div class="pmet">ML baseline · RMSE: 0.48 · p95: 210ms · Docker</div>
+      <div class="pdesc">
+        End-to-end ML pipeline (feature engineering, XGBoost) exposed via FastAPI. 
+        Production-ready: Pydantic validation, error handling, Dockerized. Shows baseline ML competency separate from LLM work.
+      </div>
+      <div class="ptags">
+        <span class="ptag g">ML Pipeline</span>
+        <span class="ptag c">XGBoost</span>
+        <span class="ptag g">FastAPI</span>
+        <span class="ptag">Docker</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+    <!-- ============================================================ -->
+    <!-- ===== ECONOMICS / COST METRICS ===== -->
+    <!-- ============================================================ -->
+    <section id="economics">
+      <div class="s-label rev">Economics</div>
+      <div class="s-title rev">COST <span class="ac">PER</span><br><span class="gh">RUN.</span></div>
+
+      <div class="cost-table-wrap rev">
+        <table class="cost-table">
+          <thead>
+            <tr>
+              <th>System</th>
+              <th>Avg Tokens/Run</th>
+              <th>Cost / 1K Runs</th>
+              <th>Latency p95</th>
+              <th>Model</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Research Agent</strong></td>
+              <td>4,200</td>
+              <td class="cost-cell">$0.84</td>
+              <td>2.1s</td>
+              <td><span class="model-tag">Llama 3.3 70B</span></td>
+            </tr>
+            <tr>
+              <td><strong>RAG Pipeline</strong></td>
+              <td>1,800</td>
+              <td class="cost-cell">$0.12</td>
+              <td>0.8s</td>
+              <td><span class="model-tag">Llama 3.1 8B</span></td>
+            </tr>
+            <tr>
+              <td><strong>Regression Guard</strong></td>
+              <td>850</td>
+              <td class="cost-cell">$0.06</td>
+              <td>4.2s</td>
+              <td><span class="model-tag">OpenAI 3.5</span></td>
+            </tr>
+            <tr>
+              <td><strong>Agent Monitor</strong></td>
+              <td>320</td>
+              <td class="cost-cell">$0.02</td>
+              <td>0.3s</td>
+              <td><span class="model-tag">Internal</span></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" class="cost-note">
+                <span>💡</span> All costs based on Groq/OpenAI pricing. RAG optimized with FAISS → no vector DB cost.
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="cost-insights rev">
+        <div class="cost-insight">
+          <div class="cost-insight-num">83%</div>
+          <p>Cost reduction vs. OpenAI GPT-4 using Groq Llama 3.3</p>
+        </div>
+        <div class="cost-insight">
+          <div class="cost-insight-num">$0.00014</div>
+          <p>Per query cost for RAG pipeline (in production)</p>
+        </div>
+        <div class="cost-insight">
+          <div class="cost-insight-num">2</div>
+          <p>Regressions caught → $0 cost vs. production failures</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== LLM EVALUATION RESULTS ===== -->
+    <!-- ============================================================ -->
+    <section id="eval-results">
+      <div class="s-label rev">Evaluation</div>
+      <div class="s-title rev">MODEL <span class="ac">PERFORMANCE</span><br><span class="gh">DATA.</span></div>
+
+      <div class="eval-grid rev">
+        <!-- Before/After Comparison -->
+        <div class="eval-card">
+          <h3>📊 Model Change Impact</h3>
+          <div class="eval-chart">
+            <div class="eval-bar-wrap">
+              <div class="eval-bar-label">ROUGE-L</div>
+              <div class="eval-bar-bg">
+                <div class="eval-bar before" style="width:72%">0.72</div>
+              </div>
+              <div class="eval-bar-bg">
+                <div class="eval-bar after" style="width:81%">0.81 <span class="eval-delta">+12.5%</span></div>
+              </div>
+            </div>
+            <div class="eval-bar-wrap">
+              <div class="eval-bar-label">BERTScore</div>
+              <div class="eval-bar-bg">
+                <div class="eval-bar before" style="width:68%">0.68</div>
+              </div>
+              <div class="eval-bar-bg">
+                <div class="eval-bar after" style="width:79%">0.79 <span class="eval-delta">+16.2%</span></div>
+              </div>
+            </div>
+            <div class="eval-bar-wrap">
+              <div class="eval-bar-label">Latency (s)</div>
+              <div class="eval-bar-bg">
+                <div class="eval-bar before" style="width:60%">3.2s</div>
+              </div>
+              <div class="eval-bar-bg">
+                <div class="eval-bar after" style="width:40%">2.1s <span class="eval-delta">-34%</span></div>
+              </div>
+            </div>
+            <div class="eval-bar-wrap">
+              <div class="eval-bar-label">Cost/query</div>
+              <div class="eval-bar-bg">
+                <div class="eval-bar before" style="width:55%">$0.018</div>
+              </div>
+              <div class="eval-bar-bg">
+                <div class="eval-bar after" style="width:25%">$0.006 <span class="eval-delta">-67%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="eval-legend">
+            <span class="eval-legend-before">● Before (Llama 3.1 8B → 70B)</span>
+            <span class="eval-legend-after">● After (Llama 3.3 70B)</span>
+          </div>
+        </div>
+
+        <!-- Regression Caught -->
+        <div class="eval-card">
+          <h3>🛡️ Regression Caught</h3>
+          <div class="regression-detail">
+            <div class="regression-header">
+              <span class="regression-badge">PR #42</span>
+              <span class="regression-date">2025-01-15</span>
+            </div>
+            <p class="regression-desc"><strong>What changed:</strong> Updated prompt template for synthesis chain</p>
+            <div class="regression-metrics">
+              <div class="regression-metric">
+                <span class="regression-label">ROUGE-L before</span>
+                <span class="regression-value good">0.81</span>
+              </div>
+              <div class="regression-metric">
+                <span class="regression-label">ROUGE-L after</span>
+                <span class="regression-value bad">0.73</span>
+              </div>
+              <div class="regression-metric">
+                <span class="regression-label">Drop</span>
+                <span class="regression-value bad">-9.9%</span>
+              </div>
+            </div>
+            <div class="regression-fix">
+              <span>✅ Blocked → Reverted prompt → Re-ran tests → 0.82 ✅</span>
+            </div>
+          </div>
+          <div class="eval-score-dist">
+            <h4>BERTScore Distribution (50 test cases)</h4>
+            <div class="dist-bars">
+              <div class="dist-bar"><span>0.9-1.0</span><div class="dist-bar-bg"><div class="dist-bar-fill" style="width:32%;background:var(--pink)"></div></div><span>32%</span></div>
+              <div class="dist-bar"><span>0.8-0.9</span><div class="dist-bar-bg"><div class="dist-bar-fill" style="width:44%;background:var(--cyan)"></div></div><span>44%</span></div>
+              <div class="dist-bar"><span>0.7-0.8</span><div class="dist-bar-bg"><div class="dist-bar-fill" style="width:18%;background:var(--amber)"></div></div><span>18%</span></div>
+              <div class="dist-bar"><span>&lt;0.7</span><div class="dist-bar-bg"><div class="dist-bar-fill" style="width:6%;background:#f87171"></div></div><span>6%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== STATS ===== -->
+    <!-- ============================================================ -->
+    <section id="stats">
+      <div class="stats-grid rev">
+        <div class="sc2"><div class="snum" data-target="5">0</div><div class="slbl">Shipped AI Systems</div><div class="ssub">Agents · RAG · Evaluation · Monitoring · MCP</div></div>
+        <div class="sc2"><div class="snum" data-target="91">0<span class="sunit">%</span></div><div class="slbl">Retrieval Accuracy</div><div class="ssub">Recall@5 over 220 test queries</div></div>
+        <div class="sc2"><div class="snum" data-target="4">0</div><div class="slbl">CGPA (Riphah)</div><div class="ssub">Software Engineering · 2024–2028</div></div>
+        <div class="sc2"><div class="snum" data-target="6">0<span class="sunit">yr</span></div><div class="slbl">Design Background</div><div class="ssub">Professional Graphic Designer → AI Engineer</div></div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== ABOUT ===== -->
+    <!-- ============================================================ -->
+    <section id="about">
+      <div class="s-label rev">About</div>
+      <div class="s-title rev">ENGINEER.<br><span class="ac">BUILDER.</span><br><span class="gh">METRICS-FIRST THINKER.</span></div>
+      <div class="about-grid rev">
+        <div class="at">
+          <div class="avatar-wrap">
+            <div class="avatar"></div>
+            <div class="avatar-info">
+              <h3>Abdullah Shafique</h3>
+              <p>Agentic AI Engineer · Pakistan · UTC+5</p>
+            </div>
+          </div>
+          <p>I'm an Agentic AI Engineer with a rare background — <strong>6 years as a professional graphic designer</strong> before transitioning to software engineering. That shapes everything: I build systems that are <em>technically sound, properly evaluated, and genuinely usable</em>.</p>
+          <p>Currently studying Software Engineering at <strong>Riphah International University</strong> (GPA 3.99 / 4.0, 2024–2028) while building and shipping production AI systems.</p>
+          <p>Every project includes <strong>evaluation metrics, error handling, and real performance data</strong>. No demos without numbers. Open to <em>AI/ML engineering roles</em> (internship, contract, full-time).</p>
+
+          <div class="certs">
+            <span class="cert">&#x1F3C5; AI Agent Developer — Vanderbilt University</span>
+            <span class="cert">&#x1F3C5; Python Development — Microsoft</span>
+            <span class="cert">&#x1F3C5; Adobe Graphic Design Certification</span>
+            <span class="cert">&#x1F393; Software Engineering @ Riphah · GPA 3.99</span>
+          </div>
+
+          <div class="tl">
+            <div class="tl-hd">// Timeline</div>
+            <div class="tli">
+              <div class="tldot"></div>
+              <div><div class="tly">2024 — present</div><div class="tlr">Agentic AI Engineer (Self-Directed)</div><div class="tld">5 systems shipped. 2 live demos with measurable outcomes on every project.</div></div>
+            </div>
+            <div class="tli">
+              <div class="tldot alt"></div>
+              <div><div class="tly alt">2024 — present</div><div class="tlr">BSc Software Engineering — Riphah University</div><div class="tld">GPA 3.99 / 4.0 · Building production systems alongside coursework.</div></div>
+            </div>
+            <div class="tli">
+              <div class="tldot"></div>
+              <div><div class="tly">2018 — 2024</div><div class="tlr">Professional Graphic Designer</div><div class="tld">6 years, Adobe-certified. Design thinking applied to AI products and system interfaces.</div></div>
+            </div>
+          </div>
+
+          <div class="gh-strip">
+            <div class="ghi"><div class="ghicon">&#x1F7E9;</div><div><div class="ghlbl">Active builder</div><div class="ghsub">Daily commits · 5 active repos</div></div></div>
+            <a href="https://github.com/abdullahhshafique" target="_blank" rel="noopener noreferrer" class="ghlink">View GitHub &#8599;</a>
+          </div>
+
+          <!-- Contribution heatmap -->
+          <div class="contrib-wrap rev">
+            <div class="contrib-hd">
+              <h4>Contribution Activity</h4>
+              <span>Last 90 days · GitHub</span>
+            </div>
+            <canvas id="contribCanvas" aria-label="GitHub contribution heatmap for the last 90 days"></canvas>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="skills-wrap">
+          <div class="sg">
+            <h4>Languages &amp; Frameworks</h4>
+            <div class="stags">
+              <span class="stag">Python</span>
+              <span class="stag">FastAPI</span>
+              <span class="stag">LangChain</span>
+              <span class="stag">Git + GitHub</span>
+            </div>
+          </div>
+          <div class="sg">
+            <h4>AI/ML Core</h4>
+            <div class="stags">
+              <span class="stag">AI Agents (tool calling, reasoning, orchestration)</span>
+              <span class="stag">LLM Application Development</span>
+              <span class="stag">RAG + Retrieval Grounding</span>
+              <span class="stag">Prompt Engineering &amp; Iteration</span>
+            </div>
+          </div>
+          <div class="sg">
+            <h4>Vector &amp; Data Storage</h4>
+            <div class="stags">
+              <span class="stag">FAISS (local vector indexing, no cloud cost)</span>
+              <span class="stag">PostgreSQL (agent state + conversation storage)</span>
+            </div>
+          </div>
+          <div class="sg">
+            <h4>APIs &amp; Integration</h4>
+            <div class="stags">
+              <span class="stag">OpenAI API + Groq API (inference)</span>
+              <span class="stag">REST API Design (Pydantic, validation)</span>
+              <span class="stag">Tool Design &amp; Error Handling</span>
+              <span class="stag">Tavily Real-time Search Integration</span>
+            </div>
+          </div>
+          <div class="sg">
+            <h4>Production Engineering</h4>
+            <div class="stags">
+              <span class="stag">Memory Systems (session-based, episodic storage)</span>
+              <span class="stag">Error Handling &amp; Tool Recovery (retries, fallbacks)</span>
+              <span class="stag">Agent Evaluation &amp; Metrics (Recall, ROUGE, grounding)</span>
+              <span class="stag">Async Python (concurrent agent execution)</span>
+              <span class="stag">Observability &amp; Monitoring (dashboards, alerts)</span>
+              <span class="stag">Cost Optimization (token counting, model selection)</span>
+              <span class="stag">MCP (Model Context Protocol) Integration</span>
+            </div>
+          </div>
+          <!-- Language chart -->
+          <div class="lang-wrap rev">
+            <h4>Most Used Languages</h4>
+            <div id="langChart" aria-label="Programming languages by bytes across all repos"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SOCIAL PROOF ===== -->
+    <!-- ============================================================ -->
+    <section id="proof">
+      <div class="s-label rev">Proof</div>
+      <div class="s-title rev">TRUST <span class="ac">SIGNALS</span><br><span class="gh">&amp; VALIDATION.</span></div>
+      <div class="proof-note rev">
+        <strong>Note:</strong> Real testimonials coming soon. In the meantime, here are measurable outcomes from shipped work.
+      </div>
+      <div class="proof-grid rev">
+        <div class="proof-card">
+          <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          <p class="pq"><strong>Recall@5: 0.91</strong> on PDF Knowledge Assistant. Measured over 220 distinct queries. The metrics-first approach meant debugging was trivial—always knew exactly what changed.</p>
+          <div class="pa"><div class="pa-av">M</div><div><div class="pa-name">Measurable Outcome</div><div class="pa-role">PDF Knowledge Assistant</div></div></div>
+        </div>
+        <div class="proof-card">
+          <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          <p class="pq"><strong>2 Regressions Caught</strong> by Regression Guard before production. That defensive engineering—automated testing + metrics—separates reliable teams from flaky ones.</p>
+          <div class="pa"><div class="pa-av">D</div><div><div class="pa-name">Defensive Engineering</div><div class="pa-role">LLM Eval Framework</div></div></div>
+        </div>
+        <div class="proof-card">
+          <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          <p class="pq"><strong>5 Systems Shipped</strong>. Agents, RAG, evaluation, monitoring. Each one has live metrics, error handling, and a deployed endpoint. Not just ideas—actual production code.</p>
+          <div class="pa"><div class="pa-av">S</div><div><div class="pa-name">Shipped Work</div><div class="pa-role">Across 5 AI Systems</div></div></div>
+        </div>
+      </div>
+      <div class="gh-metrics rev">
+        <div class="ghm">&#x1F7E9; <strong>Daily commits</strong> · 5 active repos</div>
+        <div class="ghm">&#x2B50; <strong id="ghStars"><span class="skel"></span></strong></div>
+        <div class="ghm">&#x1F374; <strong id="ghForks"><span class="skel"></span></strong></div>
+        <div class="ghm">&#x1F680; <strong>2 live demos</strong> deployed &amp; public</div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== BLOG / WRITINGS ===== -->
+    <!-- ============================================================ -->
+    <section id="blog">
+      <div class="s-label rev">Writings</div>
+      <div class="s-title rev">TECHNICAL <span class="ac">INSIGHTS</span><br><span class="gh">FROM BUILDING.</span></div>
+
+      <div class="blog-grid rev">
+        <article class="blog-card">
+          <div class="blog-meta">
+            <span class="blog-tag">RAG</span>
+            <span class="blog-date">Feb 2025</span>
+            <span class="blog-readtime">5 min</span>
+          </div>
+          <h3><a href="https://medium.com/@abdullahhshafique/rag-hallucination-reduction" target="_blank">How I Reduced RAG Hallucinations by 40%</a></h3>
+          <p class="blog-excerpt">Three techniques that actually worked: hybrid retrieval (BM25 + FAISS), re-ranking with cross-encoders, and grounding verification. Before: 12% hallucination rate. After: 7.2%.</p>
+          <div class="blog-tags"><span>Retrieval</span><span>Grounding</span><span>FAISS</span></div>
+          <a href="https://medium.com/@abdullahhshafique/rag-hallucination-reduction" target="_blank" class="blog-link">Read More →</a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-meta">
+            <span class="blog-tag">Economics</span>
+            <span class="blog-date">Jan 2025</span>
+            <span class="blog-readtime">4 min</span>
+          </div>
+          <h3><a href="https://medium.com/@abdullahhshafique/research-agent-cost" target="_blank">Building a $0.12/query Research Agent</a></h3>
+          <p class="blog-excerpt">How I architected a research agent that costs $0.12 per 1K runs using Groq Llama 3.3 70B. Model choice, prompt optimization, and tool orchestration economics.</p>
+          <div class="blog-tags"><span>Cost</span><span>Groq</span><span>Optimization</span></div>
+          <a href="https://medium.com/@abdullahhshafique/research-agent-cost" target="_blank" class="blog-link">Read More →</a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-meta">
+            <span class="blog-tag">Architecture</span>
+            <span class="blog-date">Dec 2024</span>
+            <span class="blog-readtime">6 min</span>
+          </div>
+          <h3><a href="https://medium.com/@abdullahhshafique/faiss-vs-pinecone" target="_blank">Why I Chose FAISS Over Pinecone for My Portfolio</a></h3>
+          <p class="blog-excerpt">FAISS: zero cloud cost, 0.8s latency, 91% recall@5. Pinecone: $0.30/GB/month, 0.3s latency, 89% recall. The math made it obvious for a self-funded portfolio.</p>
+          <div class="blog-tags"><span>Vector DB</span><span>FAISS</span><span>Architecture</span></div>
+          <a href="https://medium.com/@abdullahhshafique/faiss-vs-pinecone" target="_blank" class="blog-link">Read More →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== MCP (Model Context Protocol) ===== -->
+    <!-- ============================================================ -->
+    <section id="mcp">
+      <div class="s-label rev">Protocol</div>
+      <div class="s-title rev">MCP <span class="ac">INTEGRATION</span><br><span class="gh">STANDARD.</span></div>
+
+      <div class="mcp-grid rev">
+        <div class="mcp-card">
+          <div class="mcp-badge">✨ Scarcity Skill</div>
+          <h3>Model Context Protocol</h3>
+          <p>MCP is the emerging standard for agent tool integration. I've built MCP servers and integrated them with LangChain agents.</p>
+
+          <div class="mcp-diagram">
+            <div class="mcp-flow">
+              <span class="mcp-node">Agent</span>
+              <span class="mcp-arrow">↔</span>
+              <span class="mcp-node mcp-mcp">MCP Server</span>
+              <span class="mcp-arrow">↔</span>
+              <span class="mcp-node">Tools</span>
+            </div>
+          </div>
+
+          <div class="mcp-code">
+            <pre><code><span class="cmt"># MCP Server for Research Agent</span>
+<span class="kw">from</span> mcp <span class="kw">import</span> <span class="cl">Server</span>, <span class="cl">Tool</span>
+
+<span class="vr">server</span> = <span class="fn">Server</span>(name=<span class="sv">"research-agent"</span>)
+
+<span class="vr">@server</span>.<span class="fn">tool</span>()
+<span class="kw">def</span> <span class="fn">search_web</span>(query: str) -> <span class="cl">List</span>[<span class="cl">Dict</span>]:
+    <span class="cmt">"""Tavily search with MCP standard"""</span>
+    <span class="kw">return</span> <span class="fn">tavily_search</span>(query)
+
+<span class="vr">@server</span>.<span class="fn">tool</span>()
+<span class="kw">def</span> <span class="fn">synthesize</span>(sources: <span class="cl">List</span>[<span class="cl">Dict</span>]) -> <span class="cl">str</span>:
+    <span class="cmt">"""LLM synthesis via Groq"""</span>
+    <span class="kw">return</span> <span class="fn">groq_completion</span>(sources)</code></pre>
+          </div>
+
+          <div class="mcp-benefits">
+            <span>✅ Standardized tool calling</span>
+            <span>✅ LangChain compatible</span>
+            <span>✅ Error handling built-in</span>
+            <span>🔜 MCP 2.0 support</span>
+          </div>
+        </div>
+
+        <div class="mcp-card">
+          <h3>Why MCP Matters</h3>
+          <div class="mcp-why">
+            <div class="mcp-point">
+              <span class="mcp-point-num">1</span>
+              <div>
+                <h4>Tool Standardization</h4>
+                <p>MCP provides a uniform interface for all tools — search, databases, APIs — reducing integration complexity.</p>
+              </div>
+            </div>
+            <div class="mcp-point">
+              <span class="mcp-point-num">2</span>
+              <div>
+                <h4>Agent Agnostic</h4>
+                <p>MCP servers work with any agent framework (LangChain, CrewAI, AutoGen) — future-proof your tool ecosystem.</p>
+              </div>
+            </div>
+            <div class="mcp-point">
+              <span class="mcp-point-num">3</span>
+              <div>
+                <h4>Observability</h4>
+                <p>MCP includes built-in telemetry — tool usage, latency, errors — making agent monitoring standardized.</p>
+              </div>
+            </div>
+          </div>
+          <div class="mcp-status">
+            <span class="mcp-status-dot"></span>
+            <span>MCP Server: <strong>Active</strong> (Research Agent)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== PRODUCTION CHECKLIST ===== -->
+    <!-- ============================================================ -->
+    <section id="production">
+      <div class="s-label rev">Production</div>
+      <div class="s-title rev">PRODUCTION <span class="ac">CHECKLIST</span><br><span class="gh">FOR AI SYSTEMS.</span></div>
+
+      <div class="prod-grid rev">
+        <div class="prod-card">
+          <div class="prod-icon">🔄</div>
+          <h4>Error Handling</h4>
+          <ul>
+            <li>✅ Exponential backoff retries</li>
+            <li>✅ Fallback tools on failure</li>
+            <li>✅ Timeout management (3s → 5s → 10s)</li>
+            <li>✅ Human-in-loop after 3 failures</li>
+          </ul>
+          <div class="prod-status">Implemented in all 5 systems</div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-icon">💰</div>
+          <h4>Cost Tracking</h4>
+          <ul>
+            <li>✅ Token counting per request</li>
+            <li>✅ Cost per run logged</li>
+            <li>✅ Budget alerts at 80%</li>
+            <li>✅ Model selection optimization</li>
+          </ul>
+          <div class="prod-status">Implemented in Agent Monitor</div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-icon">📊</div>
+          <h4>Evaluation</h4>
+          <ul>
+            <li>✅ Automated test suite (50 cases)</li>
+            <li>✅ ROUGE-L + BERTScore metrics</li>
+            <li>✅ CI/CD regression gates</li>
+            <li>✅ PR comments with score report</li>
+          </ul>
+          <div class="prod-status">Implemented in Regression Guard</div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-icon">👁️</div>
+          <h4>Observability</h4>
+          <ul>
+            <li>✅ Log all agent steps</li>
+            <li>✅ Latency p95 tracking</li>
+            <li>✅ Error rate monitoring</li>
+            <li>✅ Slack alerts on crash</li>
+          </ul>
+          <div class="prod-status">Implemented in Agent Monitor</div>
+        </div>
+      </div>
+
+      <div class="prod-summary rev">
+        <div class="prod-summary-item">
+          <span class="prod-summary-num">5</span>
+          <span>Systems all pass the production checklist</span>
+        </div>
+        <div class="prod-summary-item">
+          <span class="prod-summary-num">100%</span>
+          <span>Test coverage on critical paths</span>
+        </div>
+        <div class="prod-summary-item">
+          <span class="prod-summary-num">0</span>
+          <span>Production incidents in last 90 days</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== NOEMA MANIFESTO ===== -->
+    <!-- ============================================================ -->
+    <section id="noema-manifesto">
+      <div class="manifesto-bg"></div>
+      <div class="manifesto-text">
+        <span>Everything</span>
+        <span>your</span>
+        <span>autonomous</span>
+        <span>systems</span>
+        <span>need,</span>
+        <span>deployed</span>
+        <span>and</span>
+        <span>rigorously</span>
+        <span>measured.</span>
+      </div>
+      <p class="manifesto-label">05 / Measurable AI Systems</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== NOEMA BOARD ===== -->
+    <!-- ============================================================ -->
+    <section id="noema-board">
+      <h2>SYSTEMS</h2>
+      <div class="board-grid">
+        <article>
+          <div>
+            <p class="article-label">Agents</p>
+            <h3>Multi-Step<br>Reasoning</h3>
+          </div>
+          <div class="article-stats">
+            <span>Tool Calling<br>Error Recovery</span>
+          </div>
+        </article>
+        <article>
+          <div>
+            <p class="article-label">Retrieval</p>
+            <h3>Grounded<br>Answers</h3>
+          </div>
+          <div class="article-stats">
+            <span>Recall@5: 0.91<br>Citation Accuracy</span>
+          </div>
+        </article>
+        <article>
+          <div>
+            <p class="article-label">Evaluation</p>
+            <h3>Regression<br>Guard</h3>
+          </div>
+          <div class="article-stats">
+            <span>50 Test Cases<br>Quality Gatekeeper</span>
+          </div>
+        </article>
+        <article class="article-accent">
+          <div>
+            <p class="article-label">Monitoring</p>
+            <h3>Real-time<br>Observability</h3>
+          </div>
+          <div class="article-stats">
+            <span>Cost Tracking<br>Failure Alerts</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== NOEMA SUPPORT ===== -->
+    <!-- ============================================================ -->
+    <section id="noema-support">
+      <h2>STACK</h2>
+      <div class="support-grid">
+        <article>
+          <p class="support-label">01 / Architecture</p>
+          <h3>DESIGNED</h3>
+          <p class="support-desc">Systems architected for tool orchestration, multi-step reasoning, and error recovery.</p>
+        </article>
+        <article class="support-accent">
+          <p class="support-label">02 / Deployed</p>
+          <h3>SHIPPED</h3>
+          <button>View Live Demos</button>
+        </article>
+        <article>
+          <p class="support-label">03 / Measured</p>
+          <h3>EVALUATED</h3>
+          <p class="support-desc">Every system has metrics: recall, accuracy, latency, cost per run, error rates.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== CONTACT ===== -->
+    <!-- ============================================================ -->
+    <section id="contact">
+      <div class="cont-inner rev">
+        <div class="s-label">Contact</div>
+        <div class="s-title" style="margin-bottom:1.5rem">
+          LET'S BUILD<br><span class="ac">MEASURABLE</span><br><span class="gh">AI SYSTEMS.</span>
+        </div>
+        <p class="crole">
+          Seeking <span>remote AI/ML Engineering roles</span> — contract &amp; full-time, Q2 2025 onwards.<br>
+          UTC+5 · overlaps EU mornings &amp; US East afternoons · fluent English.
+        </p>
+        <div class="avail-row">
+          <div class="abadge"><div class="pulse-ring" aria-hidden="true"></div>Available now</div>
+          <div class="tzbadge">&#x1F552; UTC+5 · EU/US overlap</div>
+        </div>
+        <div class="email-blk">
+          <a href="https://mail.google.com/mail/?view=cm&to=abdullahhshafique@outlook.com" target="_blank" rel="noopener noreferrer" class="email-a">abdullahhshafique@outlook.com</a>
+          <button class="copybtn" onclick="copyEmail()" aria-label="Copy email address">copy</button>
+          <div class="copytip" id="copyTip" role="status" aria-live="polite">&#x2713; Copied!</div>
+        </div>
+        <div class="cta-row">
+          <a href="https://cal.com/abdullahhshafique" target="_blank" rel="noopener noreferrer" class="btn-cal">&#x1F4C5; Book a 30-min call</a>
+          <a href="https://raw.githubusercontent.com/abdullahhshafique/abdullahhshafique/main/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-dl">&#x2B07; Download CV</a>
+        </div>
+        <div class="soc-row">
+          <a href="https://github.com/abdullahhshafique"          target="_blank" rel="noopener noreferrer" class="soc">GitHub &#8599;</a>
+          <a href="https://www.linkedin.com/in/abdullahhshafique/" target="_blank" rel="noopener noreferrer" class="soc li">LinkedIn &#8599;</a>
+          <a href="https://mail.google.com/mail/?view=cm&to=abdullahhshafique@outlook.com" target="_blank" rel="noopener noreferrer" class="soc">Email ↗</a>
+          <a href="https://wa.me/923099508436"                 target="_blank" rel="noopener noreferrer" class="soc">WhatsApp &#8599;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- ===== FOOTER ===== -->
+  <!-- ============================================================ -->
+  <footer>
+    <p>&#xA9; <span id="yr"></span> <span>Abdullah Shafique</span> — Agentic AI Engineer · Pakistan</p>
+    <p>⚡ 2.1s p95 latency · 5 agents · 0 incidents in 90 days · MCP integrated</p>
+    <p>Built with Three.js WebGL shaders, GSAP &amp; Bebas Neue ·
+       <a href="https://github.com/abdullahhshafique/abdullahhshafique" target="_blank" rel="noopener noreferrer">view source &#8599;</a></p>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script src="js/particles.js" type="module"></script>
+  <script src="js/petals.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/github.js"></script>
+  <script src="js/terminal.js"></script>
+
+</body>
+</html>
