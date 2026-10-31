@@ -1,6 +1,8 @@
-# Abdullah Shafique — Agentic AI Engineer
+# Abdullah Shafique — AI Engineer
 
-BS Software Engineering student at Riphah International University (2024–2028). 5+ years in graphic design before moving into AI. Today I build autonomous agents, RAG systems, and LLM applications.
+Agentic AI Engineer based in Sahiwal District, Punjab, Pakistan; builds autonomous agents, RAG systems, and LLM applications; BS Software Engineering, Riphah International University, 2024–2028, GPA 3.99/4.0.
+
+Portfolio: https://abdullahshafique.me · LinkedIn: https://linkedin.com/in/abdullahhshafique · Google Search Profile: https://profile.google.com/@abdullahhshafique · Personal blog: https://abdullahhshafique.blogspot.com
 
 🎯 Currently: building agentic AI systems. Open to Software Engineering internships — Summer 2027.
 
